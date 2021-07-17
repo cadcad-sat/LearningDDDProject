@@ -1,24 +1,13 @@
-﻿using System.IO;
-using Azure.Storage.Blobs;
-using Azure.Storage.Blobs.Models;
+﻿using CCS.MonolithWebApi.Domains.Entities;
+using Microsoft.Extensions.Configuration;
 
 namespace CCS.MonolithWebApi.Infrastructures.BlobServices
 {
-    public class SampleContainer
+    public class SampleContainer : BaseContainer<Sample>
     {
-        private string connectionString = "";
-        private BlobContainerClient _blobContainerClient;
-
-        public SampleContainer()
+        public SampleContainer(IConfiguration config)
+            : base(config.GetConnectionString("StorageAccount"))
         {
-            var blobServiceClient = new BlobServiceClient(connectionString);
-            _blobContainerClient = blobServiceClient.GetBlobContainerClient("sample");
-        }
-
-        public void Upload(string blobName, Stream stream)
-        {
-            var blob = _blobContainerClient.GetBlobClient(blobName);
-            BlobContentInfo content = blob.Upload(stream, true);
         }
     }
 }
