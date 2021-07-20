@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCS.UsingAppBlazorServer", 
 		{C24FA36F-26FD-496C-9F7C-FCB6AC8320CD} = {C24FA36F-26FD-496C-9F7C-FCB6AC8320CD}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCS.ApplicationTest", "CCS.ApplicationTest\CCS.ApplicationTest.csproj", "{A7F0EB50-576E-4CFE-A7F4-B7421B2FA444}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{0E4317B5-459C-40CC-940B-BC592958FFB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E4317B5-459C-40CC-940B-BC592958FFB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E4317B5-459C-40CC-940B-BC592958FFB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7F0EB50-576E-4CFE-A7F4-B7421B2FA444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F0EB50-576E-4CFE-A7F4-B7421B2FA444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7F0EB50-576E-4CFE-A7F4-B7421B2FA444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7F0EB50-576E-4CFE-A7F4-B7421B2FA444}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
