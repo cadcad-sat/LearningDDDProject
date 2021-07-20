@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCS.MonolithWebApi", "CCS.MonolithWebApi\CCS.MonolithWebApi.csproj", "{0110FF79-6CC5-4CC0-98AB-B941181093F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonolithWebApi", "MonolithWebApi\MonolithWebApi.csproj", "{0110FF79-6CC5-4CC0-98AB-B941181093F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCS.Application", "CCS.Application\CCS.Application.csproj", "{C24FA36F-26FD-496C-9F7C-FCB6AC8320CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCS.Application", "CCS.Application\CCS.Application.csproj", "{C24FA36F-26FD-496C-9F7C-FCB6AC8320CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCS.UsingAppBlazorServer", "CCS.UsingAppBlazorServer\CCS.UsingAppBlazorServer.csproj", "{0E4317B5-459C-40CC-940B-BC592958FFB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCS.UsingAppBlazorServer", "CCS.UsingAppBlazorServer\CCS.UsingAppBlazorServer.csproj", "{0E4317B5-459C-40CC-940B-BC592958FFB9}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C24FA36F-26FD-496C-9F7C-FCB6AC8320CD} = {C24FA36F-26FD-496C-9F7C-FCB6AC8320CD}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCS.ApplicationTest", "CCS.ApplicationTest\CCS.ApplicationTest.csproj", "{A7F0EB50-576E-4CFE-A7F4-B7421B2FA444}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCS.ApplicationTest", "CCS.ApplicationTest\CCS.ApplicationTest.csproj", "{A7F0EB50-576E-4CFE-A7F4-B7421B2FA444}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
