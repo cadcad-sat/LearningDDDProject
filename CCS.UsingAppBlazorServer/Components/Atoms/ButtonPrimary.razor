@@ -1,0 +1,6 @@
+<button class="btn btn-primary" @onclick="ClickAction">@Text</button>
+
+@code {
+    [Parameter] public string Text { get; set; }
+    [Parameter] public Action ClickAction { get; set; }
+}

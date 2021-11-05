@@ -1,0 +1,26 @@
+@using CCS.Application.Domains.Entities
+@using CCS.Application.Applications
+@using CCS.UsingAppBlazorServer.Components.Molecules
+@inject WeatherForecastService ForecastService
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <TableWeatherForecast Forecasts="@forecasts"/>
+}
+
+@code {
+    private WeatherForecast[] forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await ForecastService.List();
+    }
+}
