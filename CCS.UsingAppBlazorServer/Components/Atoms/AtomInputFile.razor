@@ -1,0 +1,28 @@
+﻿<div class="@RootCssClass">
+    <label for="@componentId">@LabelText</label>
+    <InputFile id="@componentId" class="form-control" OnChange="LoadFiles" multiple />
+    <div class="validation-message">@exceptionMessage</div>
+</div>
+
+@code {
+    [Parameter] public string LabelText { get; set; } = string.Empty;
+    [Parameter] public int MaxFilesCount { get; set; } = 5;
+    [Parameter] public List<IBrowserFile> BrowserFiles { get; set; } = new List<IBrowserFile>();
+    [Parameter] public string RootCssClass { get; set; } = "form-group m-1";
+
+    private Guid componentId = Guid.NewGuid();
+    private string exceptionMessage = string.Empty;
+
+    private void LoadFiles(InputFileChangeEventArgs e)
+    {
+        BrowserFiles.Clear();
+        try
+        {
+            BrowserFiles.AddRange(e.GetMultipleFiles(MaxFilesCount));
+        }
+        catch (Exception ex)
+        {
+            exceptionMessage = ex.Message;
+        }
+    }
+}

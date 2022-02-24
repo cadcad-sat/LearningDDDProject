@@ -1,0 +1,23 @@
+﻿<div class="@RootCssClass">
+    <label for="@componentId">@LabelText</label>
+    <input id="@componentId" type="text" class="form-control @CssClass @isValidCss" @onchange="OnValueChanged" value="@Value" />
+    <div class="invalid-feedback">@ErrorMessage</div>
+</div>
+
+@code {
+    [Parameter] public string LabelText { get; set; } = string.Empty;
+    [Parameter] public string CssClass { get; set; } = string.Empty;
+    [Parameter] public string Value { get; set; } = string.Empty;
+    [Parameter] public EventCallback<string> ValueChanged { get; set; }
+    [Parameter] public string ErrorMessage { get; set; } = string.Empty;
+    [Parameter] public string RootCssClass { get; set; } = "form-group m-1";
+
+    private Guid componentId = Guid.NewGuid();
+    private string isValidCss { get { return string.IsNullOrEmpty(ErrorMessage) ? string.Empty : "is-invalid"; } }
+
+    private async Task OnValueChanged(ChangeEventArgs e)
+    {
+        string v = $"{e.Value}";
+        await ValueChanged.InvokeAsync(v);
+    }
+}

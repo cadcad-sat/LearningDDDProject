@@ -1,0 +1,47 @@
+﻿<div class="row">
+    <AtomInputDate @bind-Value="date" RootCssClass="col-md-6"></AtomInputDate>
+    <AtomInputTime @bind-Value="time" RootCssClass="col-md-6"></AtomInputTime>
+</div>
+
+@code {
+    [Parameter] public DateTime MoleValue { get; set; } = DateTime.UtcNow;
+    [Parameter] public EventCallback<DateTime> MoleValueChanged { get; set; }
+
+    private DateTime? date
+    {
+        get => MoleValue;
+        set => OnDateChanged(value);
+    }
+    private DateTime? time
+    {
+        get => MoleValue;
+        set => OnTimeChanged(value);
+    }
+
+    private Task OnDateChanged(DateTime? value)
+    {
+        if (value is not null)
+        {
+            var d = value!.Value;
+            return MoleValueChanged.InvokeAsync(new DateTime(d.Year, d.Month, d.Day, MoleValue.Hour, MoleValue.Minute, 0));
+        }
+
+        return Task.CompletedTask;
+    }
+
+    private Task OnTimeChanged(DateTime? value)
+    {
+        if (value is not null)
+        {
+            var t = value!.Value;
+            return MoleValueChanged.InvokeAsync(new DateTime(MoleValue.Year, MoleValue.Month, MoleValue.Day, t.Hour, t.Minute, 0));
+        }
+
+        return Task.CompletedTask;
+    }
+
+    private async Task OnMoleValueChanged(ChangeEventArgs e)
+    {
+        await Task.Delay(0);
+    }
+}
